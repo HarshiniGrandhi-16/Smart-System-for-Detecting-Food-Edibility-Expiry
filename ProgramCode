@@ -1,0 +1,64 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+int main() {
+    int date, month, year;
+    cout << "Enter the Expiry Date: ";
+    cin >> date;
+    if (date > 31) {
+        cout << "Invalid Date";
+        return 0;
+    }
+    
+    cout << "Enter the Expiry Month: ";
+    cin >> month;
+    if (month > 12) {
+        cout << "Invalid Month";
+        return 0;
+    }
+    
+    cout << "Enter the Expiry Year: ";
+    cin >> year;
+    
+    int d, m, y;
+    cout << "Enter the Current Date: ";
+    cin >> d;
+    if (d > 31) {
+        cout << "Invalid Date";
+        return 0;
+    }
+    
+    cout << "Enter the Current Month: ";
+    cin >> m;
+    if (m > 12) {
+        cout << "Invalid Month";
+        return 0;
+    }
+    
+    cout << "Enter the Current Year: ";
+    cin >> y;
+    if (y < 2021) {
+        cout << "Invalid Year";
+        return 0;
+    }
+    
+    if (y > year) {
+        cout << "The Food is inedible";
+    } else if (y == year) {
+        if (m > month) {
+            cout << "The Food is inedible";
+        } else if (m == month) {
+            if (d > date) {
+                cout << "The Food is inedible";
+            } else {
+                cout << "The Food is edible";
+            }
+        } else {
+            cout << "The Food is edible";
+        }
+    } else {
+        cout << "The Food is edible";
+    }
+    return 0;
+}
